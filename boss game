@@ -1,0 +1,49 @@
+
+import time
+import random
+data = open('우리반명단.txt')
+names = []
+
+for row in data :
+  names.append(row.strip())
+
+tagger = random.choice(names)
+names.remove(tagger)
+print(tagger + ', 술래입니다. 밖으로 나가주세요.')
+time.sleep(1)
+print('그리고')
+time.sleep(3)
+
+boss = random.choice(names)
+names.remove(boss)
+print(boss + ', 대장입니다. 다양한 동작을 준비해 주세요.')
+
+time.sleep(1)
+print('술래는 교실로 들어와서 준비합니다.')
+
+time.sleep(1)  # 실제 20초
+print('대장 게임을 시작합니다.')
+
+time.sleep(1)  #실제 60초
+
+print('술래는 10초 안에 새로운 동작으로 바꾸세요.')
+
+for i in range(10, 0, -1):
+  time.sleep(1)
+  print(i)
+
+time.sleep(1)  #실제 게임시 10초로 변경
+print('대장은 10초 안에 술래를 찾으세요.')
+
+for i in range(10, 0, -1):
+  time.sleep(1)
+  print(i)
+
+time.sleep(1)
+input_boss = input('대장의 이름을 입력하세요 : ')
+
+if boss == input_boss :
+  print ('축하합니다! 대장을 잡았습니다.')
+
+else :
+  print ('틀렸습니다. 대장의 승리입니다.')
